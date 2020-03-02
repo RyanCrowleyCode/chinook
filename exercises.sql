@@ -70,6 +70,14 @@ ON i.TrackId = t.TrackId;
 
 
 -- line_item_track_artist.sql: Provide a query that includes the purchased track name AND artist name with each invoice line item.
+SELECT i.InvoiceLineId, t.name, a.name
+FROM InvoiceLine i
+JOIN Track t
+ON i.TrackId = t.TrackId
+JOIN Album
+ON t.AlbumId = Album.AlbumId
+JOIN Artist a
+ON Album.ArtistId = a.ArtistId;
 
 -- country_invoices.sql: Provide a query that shows the # of invoices per country. HINT: GROUP BY
 
