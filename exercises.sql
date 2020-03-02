@@ -80,6 +80,9 @@ JOIN Artist a
 ON Album.ArtistId = a.ArtistId;
 
 -- country_invoices.sql: Provide a query that shows the # of invoices per country. HINT: GROUP BY
+SELECT Invoice.BillingCountry, COUNT() as 'Number of Invoices'
+FROM Invoice
+GROUP BY Invoice.BillingCountry;
 
 -- playlists_track_count.sql: Provide a query that shows the total number of tracks in each playlist. The Playlist name should be include on the resulant table.
 
